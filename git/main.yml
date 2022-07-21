@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Install git
+      ansible.builtin.include_tasks: tasks/install.yml
