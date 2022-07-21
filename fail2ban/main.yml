@@ -1,0 +1,8 @@
+---
+- hosts: external
+  become: true
+
+  tasks:
+    - name: Install and configure fail2ban
+      ansible.builtin.import_tasks: tasks/install.yml
+      when: ansible_os_family == "Debian"
