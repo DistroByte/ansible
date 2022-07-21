@@ -1,0 +1,7 @@
+---
+- name: apt update packages to their latest version and autoclean
+  ansible.builtin.apt:
+    name: '*'
+    state: latest
+    autoclean: yes
+  when: ansible_os_family == "Debian"
