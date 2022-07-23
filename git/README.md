@@ -1,13 +1,13 @@
-# Apt
+# Git
 
-An asible role that updates packages and installs basic tools, defined in `vars.yml`.
+An asible role that installs git on the target hosts.
 
 ## Example Playbook
 
 ```yaml
 - hosts: all
   roles:
-    - apt
+    - git
 ```
 
 ## License

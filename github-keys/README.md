@@ -1,13 +1,13 @@
-# Apt
+# Github-Keys
 
-An asible role that updates packages and installs basic tools, defined in `vars.yml`.
+An asible role that creates users and adds github ssh keys to that user, defined in `vars.yml`.
 
 ## Example Playbook
 
 ```yaml
 - hosts: all
   roles:
-    - apt
+    - github-keys
 ```
 
 ## License

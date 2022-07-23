@@ -1,13 +1,13 @@
-# Apt
+# Fail2ban
 
-An asible role that updates packages and installs basic tools, defined in `vars.yml`.
+An asible role that installs fail2ban and configures jails from `tasks/jail.local`.
 
 ## Example Playbook
 
 ```yaml
 - hosts: all
   roles:
-    - apt
+    - fail2ban
 ```
 
 ## License
