@@ -1,6 +1,6 @@
 # Apt
 
-An ansible role that updates packages and installs basic tools, defined in `vars.yml`.
+Updates packages and installs basic tools, defined in `vars.yml`.
 
 ## Example Playbook
 

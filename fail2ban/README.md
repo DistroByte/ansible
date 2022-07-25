@@ -1,6 +1,6 @@
 # Fail2ban
 
-An ansible role that installs fail2ban and configures jails from `tasks/jail.local`.
+Installs fail2ban and configures jails from `tasks/jail.local`.
 
 ## Example Playbook
 

@@ -6,10 +6,10 @@ A collection of basic ansible roles to make administration of basic tasks easier
 
 | Role | Description |
 | ---- | ----------- |
-| apt | An ansible role that updates packages and installs basic tools, defined in `vars.yml`. |
-| fail2ban | An ansible role that installs fail2ban and configures jails from `tasks/jail.local`. |
-| git | An ansible role that installs git on the target hosts. |
-| github-keys | An ansible role that creates users and adds github ssh keys to that user, defined in `vars.yml`. |
+| apt | Updates packages and installs basic tools, defined in `vars.yml`. |
+| fail2ban | Installs fail2ban and configures jails from `tasks/jail.local`. |
+| git | Installs git on the target hosts. |
+| github-keys | Creates users and adds github ssh keys to that user, defined in `vars.yml`. |
 
 ## License
 

@@ -1,6 +1,6 @@
 # Git
 
-An ansible role that installs git on the target hosts.
+Installs git on the target hosts.
 
 ## Example Playbook
 

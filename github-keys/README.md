@@ -1,6 +1,6 @@
 # Github-Keys
 
-An ansible role that creates users and adds github ssh keys to that user, defined in `vars.yml`.
+Creates users and adds github ssh keys to that user, defined in `vars.yml`.
 
 ## Example Playbook
 
