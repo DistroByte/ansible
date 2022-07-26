@@ -1,21 +1,21 @@
 ---
 - name: Ensure GitHub user accounts are present
   user:
-    name: '{{ item.user }}'
+    name: "{{ item.user }}"
     shell: /bin/bash
     createhome: true
-    groups: '{{ item.groups | default(omit) }}'
+    groups: "{{ item.groups | default(omit) }}"
     home: /home/{{ item.user }}
     state: present
-  with_items: '{{ github_users }}'
+  with_items: "{{ github_users }}"
   when: ansible_os_family != "OtherLinux"
   ignore_errors: yes
 
 - name: Ensure authorized_keys for GitHub user accounts are present
   authorized_key:
-    user: '{{ item.user | default(item) }}'
-    key: '{{ github_url }}/{{ item.account }}.keys'
+    user: "{{ item.user | default(item) }}"
+    key: "{{ github_url }}/{{ item.account }}.keys"
     manage_dir: true
     exclusive: False
-  with_items: '{{ github_users }}'
+  with_items: "{{ github_users }}"
   when: ansible_os_family != "OtherLinux"
