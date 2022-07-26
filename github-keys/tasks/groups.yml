@@ -3,5 +3,5 @@
   group:
     name: "{{ item }}"
     state: present
-  with_items: "{{ user_data.groups }}"
+  with_items: "{{ user_data.groups | default(user_data) }}"
   when: ansible_os_family != "OtherLinux"

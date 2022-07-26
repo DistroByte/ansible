@@ -6,12 +6,12 @@
 
 - name: Ensure user accounts are present
   user:
-    name: "{{ item.user }}"
+    name: "{{ item.user | default(item) }}"
     shell: /bin/bash
     createhome: true
-    groups: "{{ item.groups | default(omit) }}"
+    groups: "{{ item.groups | default(item) }}"
     append: yes
-    home: /home/{{ item.user }}
+    home: /home/{{ item.user | default(item) }}
     state: present
   with_items: "{{ github_users }}"
   when: ansible_os_family != "OtherLinux"
