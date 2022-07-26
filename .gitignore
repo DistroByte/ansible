@@ -1,5 +1,5 @@
 group_vars/*
-!group_vars/vars.yml
+!group_vars/nomad_vars.yml
 
 hosts
 
