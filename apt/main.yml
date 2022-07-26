@@ -2,12 +2,5 @@
 - hosts: all
   become: true
 
-  vars_files:
-    - ../group_vars/vars.yml
-
-  tasks:
-    - name: Update packages
-      ansible.builtin.import_tasks: tasks/update.yml
-
-    - name: Install common tools
-      ansible.builtin.import_tasks: tasks/install.yml
+  roles:
+    - apt
