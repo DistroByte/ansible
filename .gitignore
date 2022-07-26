@@ -1,1 +1,5 @@
 hosts
+group_vars/*
+!group_vars/vars.yml
+nomad/files/*
+!nomad/files/README.md
