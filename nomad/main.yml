@@ -1,10 +1,12 @@
----
-- hosts: nomad
-  become: true
+- name: Installing Nomad
+  hosts: nomad
+  become: yes
+  roles:
+    - { role: ansible-community.nomad }
 
   vars_files:
     - ../group_vars/vars.yml
 
   tasks:
-    - name: Installing Nomad
-      ansible.builtin.include_tasks: tasks/main.yml
+    - name: Start nomad
+      service: name=nomad state=started enabled=yes

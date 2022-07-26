@@ -1,5 +1,9 @@
-hosts
 group_vars/*
 !group_vars/vars.yml
+
+hosts
+
 nomad/files/*
 !nomad/files/README.md
+
+roles
