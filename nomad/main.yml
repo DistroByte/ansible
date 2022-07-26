@@ -1,0 +1,10 @@
+---
+- hosts: nomad
+  become: true
+
+  vars_files:
+    - ../group_vars/vars.yml
+
+  tasks:
+    - name: Installing Nomad
+      ansible.builtin.include_tasks: tasks/main.yml
