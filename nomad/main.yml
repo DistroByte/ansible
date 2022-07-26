@@ -5,7 +5,7 @@
     - { role: ansible-community.nomad }
 
   vars_files:
-    - ../group_vars/vars.yml
+    - ../group_vars/nomad_vars.yml
 
   tasks:
     - name: Start nomad

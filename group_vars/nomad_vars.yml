@@ -1,26 +1,8 @@
 ---
-github_users:
-  - user: distro
-    account: DistroByte
-    groups: [sudo, docker]
-
-github_url: https://github.com
-
-apt_packages:
-  - cron
-  - curl
-  - git
-  - htop
-  - net-tools
-  - nmap
-  - sysstat
-  - vim
-
 ## Nomad Package
 nomad_version: 1.3.2
 
 ### Nomad settings
-
 nomad_datacenter: "aperture"
 nomad_region: "redbrick"
 nomad_log_level: "INFO"
@@ -30,15 +12,10 @@ nomad_node_name: "{{ inventory_hostname_short }}"
 nomad_node_role: "both"
 
 #### Server settings
-
 nomad_retry_max: 3
 nomad_retry_join: true
 nomad_retry_interval: "30s"
 nomad_rejoin_after_leave: false
 
-#### Client settings
-
 ### Servers
-
 nomad_group_name: "nomad"
-

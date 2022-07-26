@@ -1,0 +1,7 @@
+---
+github_users:
+  - user: distro
+    account: DistroByte
+    groups: [sudo, docker]
+
+github_url: https://github.com

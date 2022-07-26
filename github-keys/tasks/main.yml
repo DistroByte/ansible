@@ -1,10 +1,16 @@
 ---
-- name: Ensure GitHub user accounts are present
+- include_tasks: groups.yml
+  loop: "{{ github_users }}"
+  loop_control:
+    loop_var: user_data
+
+- name: Ensure user accounts are present
   user:
     name: "{{ item.user }}"
     shell: /bin/bash
     createhome: true
     groups: "{{ item.groups | default(omit) }}"
+    append: yes
     home: /home/{{ item.user }}
     state: present
   with_items: "{{ github_users }}"
