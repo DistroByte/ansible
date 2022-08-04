@@ -1,0 +1,6 @@
+---
+- name: Secure server
+  hosts: all
+
+  roles:
+    - secure-ssh
