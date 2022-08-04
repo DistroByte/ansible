@@ -13,22 +13,28 @@
     validate: 'sshd -T -f %s'
     mode: 0644
   with_items:
-    - regexp: "^PasswordAuthentication"
-      line: "PasswordAuthentication {{ ssh_password_authentication }}"
-    - regexp: "^PermitRootLogin"
-      line: "PermitRootLogin {{ ssh_permit_root_login }}"
     - regexp: "^Port"
       line: "Port {{ ssh_port }}"
-    - regexp: "^UseDNS"
-      line: "UseDNS {{ ssh_usedns }}"
-    - regexp: "^PermitEmptyPasswords"
-      line: "PermitEmptyPasswords {{ ssh_permit_empty_password }}"
+    - regexp: "^PermitRootLogin"
+      line: "PermitRootLogin {{ ssh_permit_root_login }}"
+    - regexp: "^PubkeyAuthentication"
+      line: "PubkeyAuthentication {{ ssh_pubkey_authentication }}"
+    - regexp: "^AuthorizedKeysFile"
+      line: "AuthorizedKeysFile {{ ssh_authorized_keys_file }}"
+    - regexp: "^PasswordAuthentication"
+      line: "PasswordAuthentication {{ ssh_password_authentication }}"
     - regexp: "^ChallengeResponseAuthentication"
       line: "ChallengeResponseAuthentication {{ ssh_challenge_response_auth }}"
-    - regexp: "^GSSAPIAuthentication"
-      line: "GSSAPIAuthentication {{ ssh_gss_api_authentication }}"
+    - regexp: "^UsePAM"
+      line: "UsePAM {{ ssh_use_pam }}"
     - regexp: "^X11Forwarding"
       line: "X11Forwarding {{ ssh_x11_forwarding }}"
+    - regexp: "^PermitEmptyPasswords"
+      line: "PermitEmptyPasswords {{ ssh_permit_empty_password }}"
+    - regexp: "^GSSAPIAuthentication"
+      line: "GSSAPIAuthentication {{ ssh_gss_api_authentication }}"
+    - regexp: "^AuthenticationMethods"
+      line: "AuthenticationMethods {{ ssh_authentication_methods }}"
   notify: restart ssh
 
 - name: Add configured users allowed to connect over ssh

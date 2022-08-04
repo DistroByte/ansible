@@ -1,12 +1,15 @@
 ---
 ssh_port: 22
-ssh_password_authentication: "yes"
 ssh_permit_root_login: "no"
-ssh_usedns: "no"
+ssh_pubkey_authentication: "yes"
+ssh_authorized_keys_file: "%h/.ssh/authorized_keys"
+ssh_password_authentication: "yes"
+ssh_use_pam: "no"
 ssh_permit_empty_password: "no"
 ssh_challenge_response_auth: "no"
 ssh_gss_api_authentication: "no"
-ssh_x11_forwarding: "no"
+ssh_x11_forwarding: "yes"
+ssh_authentication_methods: "publickey,password"
 sshd_state: started
 ssh_restart_handler_state: restarted
 ssh_allowed_users: []
@@ -17,4 +20,3 @@ sudoers_passworded: []
 
 ssh_config_path: /etc/ssh/sshd_config
 sshd_name: ssh
-
