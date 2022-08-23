@@ -6,15 +6,16 @@ A collection of basic ansible roles to make administration of basic tasks easier
 
 | Role | Description |
 | ---- | ----------- |
-| apt | Updates packages and installs basic tools, defined in `defaults/main.yml`. |
-| fail2ban | Installs fail2ban and configures jails from `tasks/jail.local`. |
-| git | Installs git on the target hosts. |
-| github-keys | Creates users and adds github ssh keys to that user, defined in `defaults/main.yml`. |
+| apt | Updates packages and installs basic tools, defined in `defaults/main.yml` |
+| fail2ban | Installs fail2ban and configures jails from `tasks/jail.local` |
+| git | Installs git on the target hosts |
+| github-keys | Creates users and adds github ssh keys to that user, defined in `defaults/main.yml` |
 | mount-smb | Creates users and adds github ssh keys to that user, defined in `defaults/main.yml`. |
-| node-exporter | Installs node-exporter on linux hosts and configures a systemd unit file to control it. |
-| nomad | Installs and initializes a nomad cluster. Uses group `nomad` with configuration stored in `group_vars/vars.yml`. |
+| node-exporter | Installs node-exporter on linux hosts and configures a systemd unit file to control it |
+| nomad | Installs and initializes a nomad cluster. Uses group `nomad` with configuration stored in `group_vars/vars.yml` |
 | pi-hole | Installs Pi-Hole on selected hosts |
-| secure-ssh | Hardens SSH login and user access. Variables are configured in `defaults/main.yml` |
+| secure-ssh | Hardens SSH login and user access. Variables are configured in `defaults/main.yml |
+| set-inform-unifi | Sets the specified hosts unifi application inform url to allow control of the device |
 
 ## License
 
