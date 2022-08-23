@@ -1,0 +1,6 @@
+---
+- name: Restart Pi-Hole DNS resolver
+  systemd:
+    name: pihole-FTL.service
+    state: restarted
+  listen: restart pihole-FTL

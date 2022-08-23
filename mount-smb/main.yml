@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+
+  roles:
+    - mount-smb
+
+# sudo apt install cifs-utils
+# /etc/fstab >> //dionysus/backups /storage cifs credentials=/etc/win-credentials, file_mode=0755,dir_mode=0755 0 0
+# /etc/win-credentials >> username=[username] password=password
+# mount -a

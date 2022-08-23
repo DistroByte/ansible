@@ -1,0 +1,30 @@
+---
+
+- name: Setup Pi-Hole
+  block:
+    - name: "Checking if Pi-Hole is already installed"
+      ansible.builtin.stat:
+        path: "/usr/local/bin/pihole"
+      register: pihole_binary
+
+    - ansible.builtin.set_fact:
+        pihole_installed: "{{ pihole_binary.stat.exists | default(false) }}"
+
+    - ansible.builtin.import_tasks: config.yml
+      when: not pihole_installed
+
+    - name: Put all Pi-Hole configuration into place
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ fspath_pihole_config }}/{{ item.dest }}"
+        owner: "{{ user_pihole }}"
+        group: root
+        mode: 0664
+      loop: 
+        - { src: setupVars.conf.j2,  dest: setupVars.conf }
+        - { src: pihole-FTL.conf.j2, dest: pihole-FTL.conf }
+      notify: restart pihole-FTL
+
+    - ansible.builtin.import_tasks: install.yml
+      when: not pihole_installed
+  # END OF BLOCK

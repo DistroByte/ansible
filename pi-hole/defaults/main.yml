@@ -1,0 +1,12 @@
+---
+pihole:
+  dns: [1.1.1.1, 1.0.0.1]
+user_pihole: "pihole"
+group_pihole: "pihole"
+fspath_pihole_config: "/etc/pihole"
+pihole_wwwroot: "/var/www/html/admin"
+### NOTE: set pihole_privacylevel in the hosts file for each host
+pihole_privacy: "{{ pihole.privacylevel | default('1') }}"
+pihole_blockingmode: "NULL"
+pihole_listening: "all"
+pihole_ratelimit: 3000/60

@@ -1,0 +1,12 @@
+---
+- name: "Clone the Pi-Hole repo"
+  ansible.builtin.git:
+    repo: https://github.com/pi-hole/pi-hole.git
+    depth: 1
+    dest: "{{ ansible_env.HOME }}/pi-hole"
+    version: master
+
+- name: Run Pi-Hole install script
+  ansible.builtin.shell: "'{{ ansible_env.HOME }}/pi-hole/automated install/basic-install.sh' --unattended >> {{ ansible_env.HOME }}/pihole_install.log"
+  args:
+    warn: false
