@@ -1,0 +1,8 @@
+---
+- name: Set Unifi inform host
+  hosts: unifi
+  gather_facts: no
+
+  tasks:
+    - name: Run command
+      raw: mca-cli-op set-inform http://hermes:8080/inform
