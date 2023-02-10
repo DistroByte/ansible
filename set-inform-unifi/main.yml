@@ -5,4 +5,4 @@
 
   tasks:
     - name: Run command
-      raw: mca-cli-op set-inform http://hermes:8080/inform
+      raw: mca-cli-op set-inform http://zeus.internal:8080/inform
